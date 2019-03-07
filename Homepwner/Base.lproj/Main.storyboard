@@ -149,11 +149,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-pV-1D4">
-                                        <rect key="frame" x="0.0" y="114" width="343" height="473"/>
+                                        <rect key="frame" x="0.0" y="114" width="343" height="435"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywr-ag-MbJ">
+                                        <rect key="frame" x="0.0" y="557" width="343" height="30"/>
+                                        <state key="normal" title="Change Date"/>
+                                        <connections>
+                                            <action selector="changeDate:" destination="xdc-Bh-leC" eventType="touchUpInside" id="dbU-y1-R1r"/>
+                                            <segue destination="2oa-Xu-glG" kind="show" id="Uho-Vd-fG3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bJs-PY-usd" firstAttribute="leading" secondItem="YVF-QU-lDs" secondAttribute="leading" id="UTv-Zj-ZmP"/>
@@ -164,6 +172,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="ywr-ag-MbJ" firstAttribute="centerX" secondItem="xPg-Ip-IoS" secondAttribute="centerX" id="C9o-mh-xaf"/>
                             <constraint firstItem="xXi-ha-cIX" firstAttribute="top" secondItem="y8f-Fn-nhz" secondAttribute="bottom" constant="8" id="DSh-YU-c5b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xXi-ha-cIX" secondAttribute="trailing" id="RcM-fF-ql5"/>
                             <constraint firstItem="xXi-ha-cIX" firstAttribute="leading" secondItem="xPg-Ip-IoS" secondAttribute="leadingMargin" id="dKh-hX-udq"/>
@@ -188,6 +197,36 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1942" y="361"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x2n-4s-dui">
+            <objects>
+                <viewController id="2oa-Xu-glG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aEV-ND-3cL"/>
+                        <viewControllerLayoutGuide type="bottom" id="oqF-RG-MH8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q3h-Or-NWH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fic-jN-mzM">
+                                <rect key="frame" x="0.0" y="252" width="375" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="573682257.48138499">
+                                    <!--2019-03-07 20:10:57 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fic-jN-mzM" firstAttribute="centerX" secondItem="q3h-Or-NWH" secondAttribute="centerX" id="2U1-2Q-Yri"/>
+                            <constraint firstItem="fic-jN-mzM" firstAttribute="centerY" secondItem="q3h-Or-NWH" secondAttribute="centerY" id="xae-nu-61n"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbp-Eo-NWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2679" y="360"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZSO-SD-LJw">
