@@ -158,8 +158,8 @@
                                         <rect key="frame" x="0.0" y="557" width="343" height="30"/>
                                         <state key="normal" title="Change Date"/>
                                         <connections>
-                                            <action selector="changeDate:" destination="xdc-Bh-leC" eventType="touchUpInside" id="dbU-y1-R1r"/>
-                                            <segue destination="2oa-Xu-glG" kind="show" id="Uho-Vd-fG3"/>
+                                            <action selector="changeDate:" destination="xdc-Bh-leC" eventType="touchUpInside" id="w5D-EI-Qrb"/>
+                                            <action selector="checkDate:" destination="xdc-Bh-leC" eventType="touchUpInside" id="Nvy-AA-EY9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -210,11 +210,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fic-jN-mzM">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fic-jN-mzM">
                                 <rect key="frame" x="0.0" y="252" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="573682257.48138499">
                                     <!--2019-03-07 20:10:57 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="changeDate:" destination="z8h-UA-iFF" eventType="valueChanged" id="s5H-IH-H2S"/>
+                                    <action selector="datePicker:" destination="z8h-UA-iFF" eventType="valueChanged" id="aPM-i1-Pph"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -225,6 +229,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbp-Eo-NWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="z8h-UA-iFF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2679" y="360"/>
         </scene>

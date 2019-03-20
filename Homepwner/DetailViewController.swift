@@ -67,4 +67,21 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @IBAction func changeDate(_ sender: Any) {
+        let vc = DatePickerViewController(nibName: nil, bundle: nil)
+        
+        // Set the tightly-coupled property for "Passing Data Back With A Property"
+        vc.detailViewController = self
+        
+        // Push the view controller onto the navigation stack
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func checkDate(_ sender: Any) {}
+    
+    func updateDate(date: Date) {
+        item.dateCreated = date
+        dateLabel.text = dateFormatter.string(from: item.dateCreated)
+    }
 }
