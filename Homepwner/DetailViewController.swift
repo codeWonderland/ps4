@@ -68,17 +68,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func changeDate(_ sender: Any) {
-        let vc = DatePickerViewController(nibName: nil, bundle: nil)
-        
-        // Set the tightly-coupled property for "Passing Data Back With A Property"
-        vc.detailViewController = self
-        
-        // Push the view controller onto the navigation stack
-        navigationController?.pushViewController(vc, animated: true)
+    override func prepare (for segue: UIStoryboardSegue, sender: Any!) {
+        let svc = segue.destination as! DatePickerViewController
+        svc.detailViewController = self
     }
-    
-    @IBAction func checkDate(_ sender: Any) {}
     
     func updateDate(date: Date) {
         item.dateCreated = date

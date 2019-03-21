@@ -82,6 +82,12 @@
         <!--Detail View Controller-->
         <scene sceneID="tSW-7K-Ooq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-sg-xmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xAG-M0-hSd">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="xdc-Bh-leC" id="Gcp-8h-ocV"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController id="xdc-Bh-leC" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y8f-Fn-nhz"/>
@@ -156,10 +162,10 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywr-ag-MbJ">
                                         <rect key="frame" x="0.0" y="557" width="343" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="btnChangeDate"/>
                                         <state key="normal" title="Change Date"/>
                                         <connections>
-                                            <action selector="changeDate:" destination="xdc-Bh-leC" eventType="touchUpInside" id="w5D-EI-Qrb"/>
-                                            <action selector="checkDate:" destination="xdc-Bh-leC" eventType="touchUpInside" id="Nvy-AA-EY9"/>
+                                            <segue destination="2oa-Xu-glG" kind="show" id="nBP-gy-TlF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -189,19 +195,13 @@
                         <outlet property="valueField" destination="H3Y-Of-OZV" id="Xrl-2q-9An"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-sg-xmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xAG-M0-hSd">
-                    <connections>
-                        <action selector="backgroundTapped:" destination="xdc-Bh-leC" id="Gcp-8h-ocV"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1942" y="361"/>
         </scene>
-        <!--View Controller-->
+        <!--Date Picker View Controller-->
         <scene sceneID="x2n-4s-dui">
             <objects>
-                <viewController id="2oa-Xu-glG" sceneMemberID="viewController">
+                <viewController id="2oa-Xu-glG" customClass="DatePickerViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aEV-ND-3cL"/>
                         <viewControllerLayoutGuide type="bottom" id="oqF-RG-MH8"/>
@@ -216,8 +216,7 @@
                                     <!--2019-03-07 20:10:57 +0000-->
                                 </date>
                                 <connections>
-                                    <action selector="changeDate:" destination="z8h-UA-iFF" eventType="valueChanged" id="s5H-IH-H2S"/>
-                                    <action selector="datePicker:" destination="z8h-UA-iFF" eventType="valueChanged" id="aPM-i1-Pph"/>
+                                    <action selector="changeDate:" destination="2oa-Xu-glG" eventType="valueChanged" id="JlY-3a-Pwq"/>
                                 </connections>
                             </datePicker>
                         </subviews>
@@ -229,7 +228,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbp-Eo-NWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="z8h-UA-iFF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2679" y="360"/>
         </scene>
